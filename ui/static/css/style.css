@@ -1,0 +1,692 @@
+/* Resetting default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f8f8f8;
+}
+
+/* Header styles */
+.header {
+    background: linear-gradient(-50deg, #5B55AA 0%, #8555AA 33%, #AA55A4 66%);
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+}
+
+/* REQUESTs */
+
+.container {
+    width: 80%;
+    margin: 20px auto;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.request-card {
+    background: #e9e9e9;
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.request-info {
+    font-size: 16px;
+    color: #555;
+    margin: 5px 0;
+}
+
+.request-date {
+    font-size: 14px;
+    color: #888;
+    margin: 5px 0;
+}
+
+.promote-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.promote-button:hover {
+    background-color: #0056b3;
+}
+
+.no-requests {
+    text-align: center;
+    font-size: 18px;
+    color: #888;
+    margin-top: 50px;
+}
+
+/* User nav */
+.user-options-menu {
+    position: fixed;
+    top: 35%;
+    left: 0;
+    width: 200px; /* Adjust as needed */
+    background: linear-gradient(0deg, #5B55AA 0%, #8555AA 33%, #AA55A4 66%);
+    color: #fff;
+    padding: 1rem;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.user-options-menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.user-options-menu ul li {
+    margin: 10px 0;
+}
+
+.user-options-menu ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.user-options-menu ul li a:hover {
+    background-color: #8555AA;
+    color: white;
+}
+
+/* Nav styles */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px; /* Adjust as needed */
+    background: linear-gradient(0deg, #5B55AA 0%, #8555AA 33%, #AA55A4 66%);
+    color: #fff;
+    padding: 1rem;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.nav-menu {
+    list-style-type: none;
+}
+
+.nav-menu li {
+    margin-bottom: 10px;
+}
+
+.nav-menu li a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    padding: 0.5rem;
+}
+
+.nav-menu li a:hover {
+    background-color: #8555AA;
+}
+
+/* Main section styles */
+.main-section {
+    margin-left: 220px; /* Adjust based on nav width */
+    padding: 20px;
+}
+
+.main-card {
+    margin-bottom: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+}
+
+.user_details h3 {
+    margin-bottom: 5px;
+}
+
+.message {
+    margin-bottom: 10px;
+}
+
+.btns {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.categories {
+    margin-top: 10px;
+}
+
+.post-category {
+    margin-right: 5px;
+    background-color: #333;
+    color: #fff;
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-size: 12px;
+}
+
+/* Footer styles */
+footer {
+    /* background-color: #333; */
+    background: linear-gradient(-50deg ,  #8555AA 0%,#AA55A4 25%, #5B55AA 66% );
+    color: #fff;
+    text-align: center;
+    padding: 0.5rem;
+    clear: both;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Title styles */
+h2 {
+    margin-bottom: 20px;
+    font-size: 28px;
+    color: #333;
+}
+
+.filters {
+    margin-bottom: 20px;
+}
+
+#myBtnContainer {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+button[name="category"] {
+    background: linear-gradient(125deg ,  #8555AA 0%,#AA55A4 25%, #5B55AA 66% );
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[name="category"]:hover {
+    background-color: #0056b3;
+}
+
+/* Card styles */
+.main-card {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.main-card:hover {
+    transform: translateY(-5px);
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.user_details h3 {
+    margin-bottom: 5px;
+    color: #333;
+    font-size: 20px;
+}
+
+.message {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #555;
+}
+
+.btns {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.right h4 {
+    font-size: 14px;
+    color: #777;
+}
+
+.icon {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.like_button,
+.dislike_button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    background-size: cover;
+}
+
+.like, .dislike {
+    display: inline-block;
+}
+
+.like_button {
+    width: 30px;
+    height: 30px;
+    background: url('/static/img/like.png');
+    border: none;
+    background-size: cover;
+}
+
+.dislike_button {
+    width: 30px;
+    height: 30px;
+    border: none;
+    background: url('/static/img/dislike.png');
+    background-size: cover;
+}
+
+.message {
+    width: 90%;
+    overflow: hidden; /* make sure it hides the content that overflows */
+    white-space: nowrap; /* don't break the line */
+    text-overflow: ellipsis; /* give the beautiful '...' effect */
+}
+
+.message a {
+    text-decoration: none;
+    color: #0056b3;
+}
+
+.message{
+    font-weight: 400;
+    margin-top: 5px;
+    color: #777;
+    line-height: 1.5em;
+    font-size: 26px;
+}
+
+.icon span {
+    color: #777;
+    font-size: 14px;
+}
+
+.categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.post-category {
+    /* background-color: #007bff; */
+    background: linear-gradient(75deg ,  #8555AA 0%,#AA55A4 25%, #5B55AA 66% );
+    color: #fff;
+    padding: 2px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+/* Container styles */
+.container-create-post {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Form styles */
+form {
+    display: grid;
+    gap: 15px;
+}
+
+.new_comment form {
+    display: flex;
+    gap: 15px;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: 25% 75%;
+    align-items: center;
+}
+
+.col-25 {
+    text-align: right;
+}
+
+.col-75 {
+    display: flex;
+    align-items: center;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+.create-submit {
+    /* background-color: #007bff; */
+    background: linear-gradient(75deg ,  #8555AA 0%,#AA55A4 25%, #5B55AA 66% );
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.create-submit:hover {
+    background-color: #0056b3;
+}
+
+/* Error label styles */
+.error {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+/* Container styles */
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+h1 {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    display: grid;
+    gap: 5px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.submit {
+    /* background-color: #007bff; */
+    background: linear-gradient(75deg ,  #8555AA 0%,#AA55A4 25%, #5B55AA 66% );
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit:hover {
+    background: linear-gradient(0deg ,  #8555AA 0%,#AA55A4 33%, #5B55AA 66% );
+}
+
+/* Error label styles */
+.error {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+/* Blog post container */
+.blogpost {
+    margin-bottom: 30px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Post username and date */
+.post-username {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.post-date {
+    color: #888;
+    font-size: 14px;
+}
+
+/* Post title and content */
+h2 {
+    margin-top: 10px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+p {
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+/* Icon styles */
+.icon {
+    display: flex;
+    align-items: center;
+}
+
+.icon form {
+    display: flex;
+    gap: 10px;
+}
+
+.icon span {
+    margin-left: 5px;
+    color: #555;
+}
+
+/* Categories styles */
+.categories {
+    margin-top: 10px;
+}
+
+.post-category {
+    margin-right: 5px;
+    background-color: #007bff;
+    color: #fff;
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-size: 12px;
+}
+
+/* Comments styles */
+.comment_block {
+    margin-top: 30px;
+}
+
+.create_new_comment h1 {
+    margin-bottom: 15px;
+}
+
+.input_comment {
+    display: flex;
+    width: 90%;
+    gap: 10px;
+}
+
+.comment-input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.user_comment {
+    margin-top: 20px;
+    list-style: none;
+    padding-left: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding-bottom: 10px;
+}
+
+.user_comment .like {
+    margin-top: 10px;
+}
+
+.user_comment .dislike {
+    margin-top: 10px;
+}
+
+
+.comment_body {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.comment_toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #888;
+    font-size: 12px;
+}
+
+.comment_details ul {
+    list-style-type: none;
+    padding-left: 0;
+    display: flex;
+}
+
+.comment_details ul li {
+    margin-right: 10px;
+}
+
+.comment_details ul li i {
+    margin-right: 5px;
+}
+
+#error-body {
+    background: linear-gradient(-100deg, #5B55AA 0%, #8555AA 33%, #AA55A4 66%);
+}
+
+.error-block {
+    text-align: center;
+    margin-top: 100px;
+}
+
+.error-block h1 {
+    font-size: 70px;
+}
+
+
+
+#home-button-error {
+    width: 50px;
+    height: 30px;
+    margin: 10px 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+#home-button-error:hover {
+    cursor: pointer;
+    background-color: #555;
+    color: white;
+
+}
+
+/* .comment_block .like,
+.comment_block .dislike {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+} */
+
+/* .comment_block .like span,
+.comment_block .dislike span {
+    margin-left: 5px;
+    color: #555;
+} */
+
+/* Common styles for login buttons */
+.login_google,
+.login_github {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px 0;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    color: white;
+}
+
+/* Specific styles for Google login button */
+.login_google {
+    background: linear-gradient(75deg ,  #8555AA 0%,#AA55A4 25%, #5B55AA 66% );
+}
+
+.login_google:hover {
+    background: linear-gradient(-100deg, #5B55AA 0%, #8555AA 33%, #AA55A4 66%);
+}
+
+/* Specific styles for GitHub login button */
+.login_github {
+    background: linear-gradient(75deg ,  #8555AA 0%,#AA55A4 25%, #5B55AA 66% );
+}
+
+.login_github:hover {
+    background: linear-gradient(-100deg, #5B55AA 0%, #8555AA 33%, #AA55A4 66%);
+}

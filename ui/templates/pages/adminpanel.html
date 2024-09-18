@@ -1,0 +1,23 @@
+{{define "title"}}Admin panel{{end}}
+
+{{define "main"}}
+<div class="container">
+    <h1>Reports</h1>
+    {{if .Reports}}
+        {{range .Reports}}
+            <div class="request-card">
+                <form action="/admin/report" method="POST">
+                    <input type="hidden" name="postID" value="{{.PostID}}">
+                    <p class="request-info"><strong>Moder:</strong> {{.ModerName}}</p>
+                    <p class="request-info"><strong>Post-ID:</strong> {{.PostID}}</p>
+                    <p class="request-info"><strong>Report:</strong> {{.Text}}</p>
+                    <p class="request-date">{{humanDate .CreatedAt}}</p>
+                    <button type="submit" class="promote-button">Delete post</button>
+                </form>
+            </div>
+        {{end}}
+    {{else}}
+        <p class="no-requests">No reports!</p>
+    {{end}}
+</div>
+{{end}}

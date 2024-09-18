@@ -1,0 +1,26 @@
+{{define "nav"}}
+<nav>
+    <ul class="nav-menu">
+        <li><a href='/'>Home</a></li>
+        {{if .UserID}}
+        <li><a href='/post/create'>Create post</a></li>
+        <li><a href="/user/posts">My posts</a></li>
+        <li><a href="/user/posts/liked">Liked posts</a></li>
+        <li><a href="/user/posts/disliked">Disliked posts</a></li>
+        {{end}}
+        {{if eq .Role "admin"}}
+        <li><a href="/admin/panel">Admin panel</a></li>
+        <li><a href="/admin/requests">Requests</a></li>
+        {{end}}
+        {{if eq .Role "user"}}
+        <li><a href="/user/request">Moderator request</a></li>
+        {{end}}
+        {{if .UserID}}
+        <li><a href="/user/logout">Logout</a></li>
+        {{else}}
+        <li><a href='/user/signup'>Signup</a></li>
+        <li><a href='/user/login'>Login</a></li>
+        {{end}}
+    </ul>
+</nav>
+{{end}}

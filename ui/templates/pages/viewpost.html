@@ -1,0 +1,102 @@
+{{define "title"}}Post #{{.Post.ID}}{{end}}
+
+{{define "main"}}
+
+    <div class="blogpost main-card-post">
+        <span class="post-username">{{.Post.Username}}</span>
+        <span class="post-date">{{humanDate .Post.Created}}</span>
+        
+        <h2>{{.Post.Title}}</h2>
+        <p>{{.Post.Content}}</p>
+        
+        <div class="icon">
+            <form action="/post/view?id={{.Post.ID}}" method="POST">
+                <div class="like">
+                    <button name="reaction" class="like_button" value="1"></button>
+                    <span>{{.Post.Likes}}</span>
+                </div>
+                <div class="dislike">
+                    <button name="reaction" class="dislike_button" value="-1"></button>
+                    <span>{{.Post.Dislikes}}</span>
+                </div>
+            </form>
+        </div>
+        <div class="categories">
+            {{ range .Post.Category}}
+                <span class="post-category">#{{ . }} </span>
+            {{ end }}
+        </div>
+        {{if eq .Post.Username .Username}}
+        <div>
+            <button><a href="/post/update/{{.Post.ID}}">EDIT POST</a></button>
+            <button><a href="/post/delete/{{.Post.ID}}">DELETE POST</a></button>
+        </div>
+        {{end}}
+        {{if eq .Role "moderator"}}
+            <div>
+                <form action="/post/report" method="POST">
+                    <input type="hidden" name="postID" value="{{.Post.ID}}">
+                    <input type="text" name="text" placeholder="report">
+                    <button>Submit</button>
+                </form>
+            </div>
+        {{end}}
+    </div>
+
+
+    <!-- comments container -->
+		<div class="comment_block">
+             <!-- create a new comment -->
+             <div class="create_new_comment">
+                <form action="/post/view?id={{.Post.ID}}" method="POST">
+                    <h1>Comments</h1>
+                    {{with .Form.FieldErrors.comment}}
+                        <label class='error'>{{.}}</label>
+                    {{end}}
+    
+                    <div class="input_comment">
+                        <input class="comment-input" type="text" name="comment" placeholder="Write a comment..">
+                        <input class="create-submit" type="submit" value="Publish comment">
+                    </div> 
+                </form>
+             </div>
+    
+    
+             <!-- new comment -->
+            <div class="new_comment">
+                {{range .Post.Comments}}
+                <ul class="user_comment">
+                     <!-- the comment body -->
+                     
+                     <div class="comment_body">
+                        <pre>{{ .Text}}</pre>
+                    </div>
+                    
+    
+                     <!-- comments toolbar -->
+                    <div class="comment_toolbar">
+                         <!-- inc. date and time -->
+                        <div class="comment_details">
+                             <ul>
+                                 <li><i class="fa fa-clock-o"></i>{{humanDate .Created}}</li>
+                                 <li><i class="fa fa-pencil"></i><span class="user">{{.Username}}</span></li>
+                             </ul>
+                        </div>
+                    </div>
+                    <form action="/post/view?id={{.PostID}}" method="POST">
+                        <input type="hidden" name="postID" value="{{.PostID}}">
+                        <input type="hidden" name="commentID" value="{{.CommentId}}">
+                        <div class="like">
+                            <button name="comment_reaction" class="like_button" value="1"></button>
+                            <span>{{.Likes}}</span>
+                        </div>
+                        <div class="dislike">
+                            <button name="comment_reaction" class="dislike_button" value="-1"></button>
+                            <span>{{.Dislikes}}</span>
+                        </div>
+                    </form>
+                </ul>
+                {{end}}
+            </div>    
+        </div>
+{{end}}

@@ -1,0 +1,22 @@
+{{define "title"}}Requests{{end}}
+
+{{define "main"}}
+<div class="container">
+    <h1>Promotion Requests</h1>
+    {{if .Requests}}
+        {{range .Requests}}
+            <div class="request-card">
+                <form action="/admin/promote" method="POST">
+                    <input type="hidden" name="senderID" value="{{.SenderID}}">
+                    <p class="request-info"><strong>ID:</strong> {{.SenderID}}</p>
+                    <p class="request-info"><strong>Name:</strong> {{.SenderName}}</p>
+                    <p class="request-date">{{humanDate .CreatedAt}}</p>
+                    <button type="submit" class="promote-button">Promote</button>
+                </form>
+            </div>
+        {{end}}
+    {{else}}
+        <p class="no-requests">No requests!</p>
+    {{end}}
+</div>
+{{end}}
